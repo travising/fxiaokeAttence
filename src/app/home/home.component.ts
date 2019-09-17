@@ -82,6 +82,11 @@ interface userInfos {
   checkInDays?: number;
 }
 
+interface groupInfos {
+  name: string;
+  group: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -93,6 +98,7 @@ export class HomeComponent implements OnInit {
   public dateEnd;
   public dateChange;
   public department;
+  public groups;
   sortName: string | null = null;
   sortValue: string | null = null;
 
@@ -105,6 +111,7 @@ export class HomeComponent implements OnInit {
   public overTimeDays = 0;
   public checkInDays = 0;
   public userInfo: userInfos[];
+  public groupInfo: groupInfos[] = [];
   public userData = [];
   public localData = [];
   
@@ -117,6 +124,20 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.dateChange = true;
     this.dateRange = [ new Date(), new Date() ];
+    var test = this;
+    this.http.get('assets/userData.json').subscribe(data => {
+      for(var i in data){
+        console.log(i + ":" + data[i].group);
+        for(var j in data[i].user) {
+          console.log(j + ":" + data[i].user[j]);
+          test.groupInfo.push({
+            name: data[i].user[j],
+            group: data[i].group
+          });
+        }
+      }
+    
+    });
   }
 
   getDateRange(result: Date[]) {
@@ -127,8 +148,11 @@ export class HomeComponent implements OnInit {
   }
 
   getDepartment(values: any): void {
-    this.department = parseInt(this.values[this.values.length-1]);
-    console.log(this.department);
+    this.http.get('assets/userData.json').subscribe(data => {
+      console.log(data);
+    });
+    // this.department = parseInt(this.values[this.values.length-1]);
+    // console.log(this.department);
   }
 
   getAccessToken() {

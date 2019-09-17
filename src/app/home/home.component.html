@@ -3,7 +3,7 @@
   <nz-cascader nzChangeOnSelect [nzOptions]="nzOptions" [(ngModel)]="values" (ngModelChange)="getDepartment($event)">
     </nz-cascader>
   <button nz-button nzType="primary" (click)="getData()" [disabled]="dateChange">getData</button>
-  <button nz-button nzType="primary" (click)="getDepartments()">getDepartments</button>
+  <button nz-button nzType="primary" (click)="getDepartment()">getDepartments</button>
   <!--button nz-button nzType="primary" (click)="getLocalData()">getLocalData</button>
   <button nz-button nzType="primary" (click)="clearlData()">clearlData</button-->
   <nz-table>
