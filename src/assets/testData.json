@@ -1,0 +1,5 @@
+[
+    { "group":"A组", "name":"罗佳伟", "overTimeTotal":"1000", "overTimeDays":1, "checkInDays":10 },
+    { "group":"B组", "name":"罗佳伟1", "overTimeTotal":"2000", "overTimeDays":2, "checkInDays":20 },
+    { "group":"C组", "name":"罗佳伟2", "overTimeTotal":"3000", "overTimeDays":3, "checkInDays":30 }
+]

@@ -1,15 +1,26 @@
 .container {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  background: url(../../assets/background.jpg) no-repeat center fixed;
+
+  /*background: url(../../assets/background.jpg) no-repeat center fixed;*/
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
 
+  .gutter-example {
+    padding: 10px;
+    margin: 0px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+  }
+
   .title {
-    color: white;
+    color: red;
     margin: 0;
     padding: 50px 20px;
   }
